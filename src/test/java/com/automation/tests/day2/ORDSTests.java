@@ -58,7 +58,7 @@ public class ORDSTests {
         Header header = response.getHeaders().get("Content-Type");
         //print all headers one by one
         for(Header h: response.getHeaders()){
-            System.out.println(h);
+            System.out.println("++++++++++++++++++++++++++++++++"+h);
         }
         System.out.println("===================================");
         System.out.println(response.prettyPrint());

@@ -24,12 +24,11 @@ public class ORDSTestsDay3 {
 
     @Test
     public void test1() {
-        given()
-                .accept("application/json")
+        given().accept("application/json")
                 .get("/employees").
-                then()
+        then()
                 .statusCode(200)
-                .and().assertThat()
+        .and().assertThat()
                 .contentType("application/json")
                 .log().all(true);
     }
@@ -38,14 +37,13 @@ public class ORDSTestsDay3 {
     //query parameter - to filter results, or describe new resources
     @Test
     public void test2() {
-        given()
-                .accept("application/json")
+        given().accept("application/json")
                 .pathParam("id", 100).
-                when()
+        when()
                 .get("/employees/{id}").
-                then()
+        then()
                 .assertThat().statusCode(200).
-                and()
+        and()
                 .assertThat().body("employee_id", is(100))
                 .assertThat().body("first_name", is("Steven"),
                 "department_id", is(90))
@@ -62,8 +60,7 @@ public class ORDSTestsDay3 {
 
     @Test
     public void test3() {
-        given()
-                .accept("application/json")
+        given().accept("application/json")
                 .pathParam("id", 1).
                 when()
                 .get("/regions/{id}").
